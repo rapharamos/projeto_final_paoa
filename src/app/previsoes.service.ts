@@ -45,4 +45,12 @@ export class PrevisoesService {
   registrarComponenteComoInteressado() {
     return this.previsoesSubject.asObservable()
   }
+  consultarHistorico(){
+    const linkOracle = "https://gd03c299a1712ae-projetopaoo.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/tb_previsao/"
+    this.httpClient.get(linkOracle).subscribe(res => {
+      console.log('RespostaOracle')
+      console.log(res)
+      this.previsoesSubject.next(res)
+    })
+  }
 }

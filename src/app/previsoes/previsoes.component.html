@@ -35,18 +35,37 @@
         </div>
       </p-tabPanel>
       <p-tabPanel header="HISTÓRICO">
+        <div>
+          <h1>Histórico</h1>
+          <br>
+          <p-table>
+            <ng-template pTemplate="header">
+              <tr>
+                <th>Data / Hora</th>
+                <th>Cidade</th>
+                <th>Clima</th>
+              </tr>
+              <tr *ngFor="let p of previsoes">
+                <td align="center">{{p.items.items.data_previsao}}</td>
+                <td align="center">{{p.items.cidade}}</td>
+                <td align="center">{{p.items.link_previsao}}</td>
+              </tr>
+            </ng-template>
+          </p-table>
+        </div>
+        <br>
         <button pButton type="button"
         label="Atualizar"
-        (click)="pesquisar()">
+        (click)="consultarHistorico()">
         </button>
       </p-tabPanel>
     </p-tabView>
   </div>
 </div>
 
-<div *ngFor="let p of previsoes">
+<!-- <div *ngFor="let p of previsoes">
   <br>
   {{p.weather.id}}
-</div>
+</div> -->
 
 

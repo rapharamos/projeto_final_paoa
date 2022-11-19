@@ -30,4 +30,7 @@ export class PrevisoesComponent implements OnInit{
   armazenarNoHistorico(){
     this.previsoesService.armazenarNoHistorico(this.cidade, null, "link de teste")
   }
+  consultarHistorico(){
+    this.previsoesService.consultarHistorico()
+  }
 }
