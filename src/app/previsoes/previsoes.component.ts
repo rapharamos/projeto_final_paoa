@@ -9,6 +9,8 @@ import { PrevisoesService } from '../previsoes.service';
 export class PrevisoesComponent implements OnInit{
   cidade: string;
   previsoes: any;
+  url_icon: string;
+  esconderChamada = true;
 
   ngOnInit(): void{
     this.previsoesService
@@ -21,13 +23,11 @@ export class PrevisoesComponent implements OnInit{
 
   }
 
-  pesquisar(): void{
+  pesquisar() : void {
     this.previsoesService.obterPrevisoes(this.cidade)
-
   }
 
   armazenarNoHistorico(){
     this.previsoesService.armazenarNoHistorico(this.cidade, null, "link de teste")
   }
-
 }

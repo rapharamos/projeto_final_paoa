@@ -6,11 +6,25 @@
           <input type="text" pInputText
           placeholder="Digite a cidade"
           [(ngModel)]="cidade" />
-          <div *ngFor="let p of previsoes">
-            <br>
-            {{p.main.temp_min}} °C    {{p.main.temp_max}} °C
-            <br>
-          </div>
+          <br><br>
+          <h1>Previsões para {{cidade}}</h1>
+          <br>
+          <p-table>
+            <ng-template pTemplate="header">
+              <tr>
+                <th>Data / Hora</th>
+                <th>T°C Mín.</th>
+                <th>T°C Máx.</th>
+                <th>Clima</th>
+              </tr>
+              <tr *ngFor="let p of previsoes">
+                <td align="center">{{p.dt_txt}}</td>
+                <td align="center">{{p.main.temp_min}}</td>
+                <td align="center">{{p.main.temp_max}}</td>
+                <td align="center"><img src="http://openweathermap.org/img/wn/02d.png"></td>
+              </tr>
+            </ng-template>
+          </p-table>
         </div>
         <br>
         <div>
@@ -32,6 +46,7 @@
 
 <div *ngFor="let p of previsoes">
   <br>
-  {{p.main.temp_min}}{{p.main.temp_max}}
-  <br>
+  {{p.weather.id}}
 </div>
+
+

@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ButtonModule } from 'primeng/button';
 import { TabViewModule } from 'primeng/tabview';
 import { InputTextModule } from 'primeng/inputtext';
-import {TableModule} from 'primeng/table';
+import { TableModule } from 'primeng/table';
 import { AppComponent } from './app.component';
 import { PrevisoesComponent } from './previsoes/previsoes.component';
 
